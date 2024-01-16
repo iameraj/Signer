@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['merajs.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'mySqlRegistration.apps.MysqlregistrationConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
