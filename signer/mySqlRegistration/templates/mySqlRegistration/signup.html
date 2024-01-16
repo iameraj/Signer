@@ -1,0 +1,68 @@
+{% extends "mySqlRegistration/base.html"%}  
+   
+{% block content %}
+
+<!-- Form start -->
+<form class="row g-3 needs-validation"
+method=post novalidate
+oninput='up2.setCustomValidity(up2.value != up.value ? "Passwords do not match." : "")' >
+{% csrf_token %}
+    <div class="col-md-4">
+      <label for="firstname" class="form-label">Firstname:</label>
+      <input type="text" class="form-control" name="firstname" id="firstname" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please provide a firstname
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="lastname" class="form-label">Lastname:</label>
+      <input type="text" class="form-control" name="lastname" id="lastname" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please provide a lastname
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="username" class="form-label">Username:</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+        <input type="text" class="form-control" name="username" id="username" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" name="email" id="email" required>
+      <div class="invalid-feedback">
+        Please provide a valid Email.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="password" required name="up">
+      <div class="invalid-feedback">
+        Please Provide a password
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="confirmpassword" class="form-label">Confirm password:</label>
+      <input type="password" class="form-control" id="confirmpassword" required name=up2>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-dark" type="submit">Sign Up</button>
+    </div>
+  </form>
+<!-- Form End -->
+
+<div  class="form-text mb-3">
+    If you have an account you can <a href="/login"> login here.</a>
+  </div>
+
+{% endblock%}

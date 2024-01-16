@@ -1,0 +1,10 @@
+{% extends "mySqlRegistration/base.html"%}  
+   
+{% block content %}
+    <div class="container">
+        <h1 class="display-1">Welcome, {{ user.username }}!</h1>
+        <hr>
+        <p><strong>Full Name:</strong> {{ full_name }}</p>
+        <p><strong>Creation Date:</strong> {{ creation_date }}</p>
+    </div>
+{% endblock%}

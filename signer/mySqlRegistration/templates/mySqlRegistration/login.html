@@ -1,0 +1,36 @@
+{% extends "mySqlRegistration/base.html"%}  
+   
+{% block content %}
+
+<!-- Form start -->
+<form class="row g-3 needs-validation"
+method=post novalidate >
+{% csrf_token %}
+    <div class="col-md-7">
+      <label for="username" class="form-label">Username:</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+        <input type="text" class="form-control" name="username" id="username" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" class="form-control" name="password" id="password" required>
+      <div class="invalid-feedback">
+        Please Provide a password
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-dark" type="submit">Login</button>
+    </div>
+  </form>
+<!-- Form End -->
+
+<div  class="form-text mb-3">
+    If you don't have an account you can Sign-Up <a href="/signup">here.</a>
+  </div>
+
+{% endblock%}
